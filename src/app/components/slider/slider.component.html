@@ -1,0 +1,27 @@
+<!--<pre>{{moviesList |json}}</pre> -->
+<div class="slider">
+    <ng-container *ngFor="let movie of moviesList; let i = index">
+    <div class="slide" *ngIf="i == currentSlideIndex" @fade>
+      <div class="slide-bg">
+        <img class="slide-bg-image" [src]="imageurl.original+movie.backdrop_path"
+         />
+      </div>
+      <div class="slide-pane">
+        <h2 class="name">{{movie.title}}</h2>
+        <div class="meta">
+          <div class="info">
+            <span class="rating"><span class="icon">star</span></span>
+            <span class="rating-value">{{movie.vote_average}}</span><span>/10</span>
+            <span>{{movie.vote_count}}</span>
+            <span>{{movie.release_date}}</span>
+          </div>
+        </div>
+        <div class="desc mt-6">
+          The Addams get tangled up in more wacky adventures and find themselves involved in hilarious run-ins with all
+          sorts of unsuspecting characters.
+        </div>
+      </div>
+    </div>
+</ng-container>
+  </div>
+  
